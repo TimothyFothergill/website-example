@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+    <head>
+        <title>Test</title>
+        <link rel="stylesheet" type="text/css" href="/css/stylesheet.css" />
+        <script src="/login-handler.js"></script>
+    </head>
+    <body>
+        <h1>The Super Login Screen</h1>
+        <form class="login-form" action="/" method="POST">
+            <p class="form-text">Username:</p> <input name="userInputName" id="username-input" type="text" placeholder="Username"/><br />
+            <p class="form-text">Password:</p> <input name="userInputPassword" id="password-input" type="text"/><br />
+            <br />
+            <input type="submit" onclick="GetUserDetails(userInputName.value, userInputPassword.value)" value="Submit" />
+        </form>
+    <script src="server.js"></script>
+    <noscript>You need to enable JavaScript to view the full site.</noscript>
+    </body>
+</html>
