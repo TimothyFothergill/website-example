@@ -6,6 +6,38 @@
     <body>
         <h1>The Super Login Screen</h1>
         <p>You're logged in as: </p>
+        <div id="local_user">
+            <script>// Retrieve
+            document.getElementById("local_user").innerHTML = localStorage.getItem("username");
+            </script>
+        </div>
+        <button onclick="getLocation()" value="Click to share location" id="sneakybutton">Click to share location</button>
+        <p id="demo"></p>
+        <script>
+            var x = document.getElementById("demo");
+            function getLocation() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(showPosition);
+                } else {
+                    x.innerHTML = "Geolocation is not supported by this browser.";
+                }
+            }
+
+            function showPosition(position) {
+                x.innerHTML = "Latitude: " + position.coords.latitude +
+                "<br>Longitude: " + position.coords.longitude;
+            }
+        </script>
+        <br />        <br />        <br />        <br />        <br />        <br />
+        <form method="POST" name="postMessageForm">
+            <input type="text" name="postText" />
+            <input type="submit" name="submitTheThing" value="Do it now" />
+        </form>
+        <script>
+            var myWorker = new Worker("scripts/webwork.js");
+        </script>
+        <button name="showTheLastMessage" value="Show it now"></button> <br />
+        <p id="displayText">hjgj</p>
     <script src="server.js"></script>
     <noscript>You need to enable JavaScript to view the full site.</noscript>
     </body>

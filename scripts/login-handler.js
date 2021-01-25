@@ -6,9 +6,9 @@ var GetUserDetails = (userInputName, userInputPassword) => {
 
     if ((userInputName == userLoginYo) && (userInputPassword == userPasswordYo)) {
         alert("Congratulations!!");
+        localStorage.setItem("username", userLoginYo);
         }
     else {
         alert("Nice try, but no cigar, hackerman!");
         }
     }
-    
